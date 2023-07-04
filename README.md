@@ -6,6 +6,7 @@ learning python backend dev with Flask
 - VSCode flask tutorial : https://code.visualstudio.com/docs/python/tutorial-flask#_create-and-run-a-minimal-flask-app
 
 ## Core concepts :
+- Starting a virtual env with venv
 - Building my first Flask app
 - Structuring a Flask app
 - Serving HTML files
