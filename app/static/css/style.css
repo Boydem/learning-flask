@@ -1,23 +1,74 @@
+/* css reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+input {
+    border: none;
+    outline: none;
+}
+img {
+    max-width: 100%;
+}
+
+/* setup */
 body {
     background: lightgray;
-    border: 10px solid rgb(63, 102, 40);
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* helpers */
+.flex {
     display: flex;
+}
+.align-center {
     align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-center {
     justify-content: center;
+}
+.flex-column {
     flex-direction: column;
 }
 
+/* components */
 .logo {
-    width: 200px;
-    margin-bottom: 20px;
+    width: 120px;
 }
-
 .title {
     color: green;
+    font-weight: 600;
+}
+
+/* public templates styles */
+.public-header {
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
+.public-header ul {
+    gap: 1rem;
+}
+.public-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.public-main {
+    padding: 1rem;
 }

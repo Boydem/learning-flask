@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{%block title%}{% endblock %}</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" />
+    </head>
+    <body>
+        <header class="public-header">
+            <div class="public-container">
+                <div class="flex align-center justify-between">
+                    <img class="logo" src="{{url_for('static',filename='img/flask.png')}}" alt="logo" />
+                    <nav>
+                        <ul class="flex align-center">
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="public-main public-container">{%block main%}{%endblock%}</main>
+        <script src="{{url_for('static',filename='js/app.js')}}"></script>
+    </body>
+</html>

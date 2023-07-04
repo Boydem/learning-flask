@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Flask index</title>
-        <link rel="stylesheet" href="{{ url_for('static',filename="css/style.css") }}" />
-    </head>
-    <body>
-        <img class='logo' src="{{ url_for('static',filename="img/flask.png") }}" alt="logo" />
-        <h1 class="title">Index</h1>
-        <p>This is Flask app index</p>
-        <script src="{{ url_for('static',filename="js/app.js") }}"></script>
-    </body>
-</html>
+{%extends "public/templates/public_template.html"%} {%block title%} MyIndex {%endblock%} {%block main%}
+
+<h1>Home page</h1>
+
+{%endblock%}
