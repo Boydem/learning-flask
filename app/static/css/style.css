@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: lightgray;
+    border: 10px solid rgb(63, 102, 40);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: green;
+}
