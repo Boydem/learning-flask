@@ -13,3 +13,4 @@ learning python backend dev with Flask
 - Serving static files (img,css,js)
 - Flask html templates with Jinja
 - Working with jinja templates
+- Forms with Flask
