@@ -79,6 +79,15 @@ button {
     color: #fff;
     font-weight: 600;
 }
+.card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card h2 {
+    margin-top: 0;
+}
 
 /* public templates styles */
 .public-header {

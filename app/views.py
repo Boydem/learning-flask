@@ -28,6 +28,36 @@ def sign_up():
     
     return render_template('public/sign_up.html')
 
+users = {
+    'noam': {
+        'name': 'Noam Dahan',
+        'bio': 'I am Noam and I am a Software Engineer!',
+        'twitter_handle': '@noam'
+    },
+    'yossi': {
+        'name': 'Yossi Benyayoun',
+        'bio': 'I am Yossi and I am a Web Developer!',
+        'twitter_handle': '@yossi'
+    },
+    'yael': {
+        'name': 'Yael Manor',
+        'bio': 'I am Yael and I am a Data Scientist!',
+        'twitter_handle': '@yael'
+    },
+    'yoni': {
+        'name': 'Yoni Bloch',
+        'bio': 'I am Yoni and I am a DevOps Engineer!',
+        'twitter_handle': '@yoni'
+    }
+}
+
+@app.route('/profile/<username>')
+def profile(username):
+    user=None
+    if username in users:
+        user = users[username]
+    return render_template('public/profile.html', user=user, username=username)
+
 @app.route("/jinja")
 def jinja():
     my_name="Noam"
