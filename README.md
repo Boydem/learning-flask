@@ -14,3 +14,5 @@ learning python backend dev with Flask
 - Flask html templates with Jinja
 - Working with jinja templates
 - Forms with Flask
+- JSON with Flask
+- Flask & the Fetch API (AJAX) 
