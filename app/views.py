@@ -20,6 +20,7 @@ def sign_up():
         username = form_data['username']
         email = form_data['email']
         password = form_data['password']
+        # do something with this data
         print(username,email,password)
         
         return redirect(request.url)
