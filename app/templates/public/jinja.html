@@ -1,0 +1,109 @@
+{%extends "public/templates/public_template.html"%} {% import "macros/input_macros.html" as im%} {%block title%} Jinja
+{%endblock%} {%block main%}
+
+<h1>Jinja page</h1>
+<hr />
+
+<h3>Variables</h3>
+<hr />
+<p>Name: {{name}}</p>
+
+<h3>Looping</h3>
+<hr />
+<ul>
+    {%for lang in langs%}
+    <li>{{loop.index}}. {{lang}}</li>
+    {%endfor%}
+</ul>
+
+<h3>Looping a dict</h3>
+<hr />
+<ul>
+    {%for key,value in friends.items()%}
+    <li>{{key}}: {{value}}</li>
+    {%endfor%}
+</ul>
+
+<h3>Looping a dict keys</h3>
+<hr />
+<ul>
+    {%for key in friends.keys()%}
+    <li>{{key}}</li>
+    {%endfor%}
+</ul>
+
+<h3>Access list member</h3>
+<hr />
+<p>langs[0]: {{langs[0]}}</p>
+
+<h3>Access dict member</h3>
+<hr />
+<p>friends['Noam']: {{friends['Noam']}}</p>
+
+<h3>Access class attribute</h3>
+<hr />
+<p>Name: {{my_remote.name}}</p>
+<p>Description: {{my_remote.description}}</p>
+
+<h3>Unpack variables</h3>
+<hr />
+{% set a,b,c = colors %}
+<p style="color:{{a}}">a: {{a}}</p>
+<p style="color:{{b}}">b: {{b}}</p>
+<p style="color:{{c}}">c: {{c}}</p>
+
+<h3>Call a function</h3>
+<hr />
+<p>{{repeat('Flask Is AWSOME, ', 10)}}</p>
+
+<h3>Call a class method</h3>
+<hr />
+<p>{{my_remote.clone()}}</p>
+
+<h3>Condtitionals</h3>
+<hr />
+{%if cool%}
+<p>Flask is cool, because cool is {{cool}}</p>
+{% else %}
+<p>Flask isnt cool, because cool is {{cool}}</p>
+{%endif%}
+<hr />
+<p>Age: {{age}}</p>
+{% if age < 18 %}
+<p>Sorry, you are too young to enter this site</p>
+{% elif age < 26 %}
+<p>You are welcome to enter this site</p>
+{% else %}
+<p>You are too old to enter this site</p>
+{% endif %}
+
+<h3>Template filters</h3>
+<hr />
+<p>length: {{name|length}}</p>
+<p>lower: {{name|lower}}</p>
+<p>upper: {{name|upper}}</p>
+<p>capitalize: {{name|capitalize}}</p>
+<p>reverse: {{name|reverse}}</p>
+<p>wordcount: {{name|wordcount}}</p>
+<p>join: {{langs|join(', ')}}</p>
+<p>replace: {{name|replace('a', 'A')}}</p>
+
+<h3>Escaping</h3>
+<hr />
+<p>By default jinja escapes html tags</p>
+<p>html_string: {{html_string}}</p>
+<hr />
+<p>We can use safe filter if we want to embed an html tag</p>
+<p>html_string|safe: {{html_string|safe}}</p>
+<hr />
+<p>Suspicous</p>
+<p>script: {{suspicious}}</p>
+
+<h3>Macros</h3>
+<hr />
+{{im.input(label="Your name",name="name",id="name",placeholder="Please enter your name")}}
+<br />
+{{im.input(label="Age",type="number",name="age",id="age",placeholder="Please enter your age")}}
+<br />
+{{im.input(label="Password",type="password",name="passowrd",id="passowrd",placeholder="Please enter your passowrd")}}
+{%endblock%}
