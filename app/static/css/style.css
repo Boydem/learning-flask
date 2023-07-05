@@ -65,7 +65,8 @@ body {
     margin: 0 auto;
     gap: 1rem;
 }
-input {
+input,
+textarea {
     padding: 0.75rem;
     border-radius: 0.25rem;
     background-color: #fff;

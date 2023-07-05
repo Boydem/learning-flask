@@ -1,0 +1,54 @@
+{%extends "public/templates/public_template.html"%} {%block title%} Guest Book {%endblock%} {%block main%}
+
+<h1>Guest book</h1>
+<hr>
+
+<div class="form-group flex align-center">
+    <label >Name</label>
+    <input type="text" id="name" placeholder="Enter your name" />
+</div>
+<div class="form-group flex align-center">
+    <label>Message</label>
+    <textarea cols="30" rows="3" type="text" id="message" placeholder="Enter your message" ></textarea>
+</div>
+<button onclick="submit_entry();">Send</button>
+
+{%endblock%}
+
+{%block script%}
+
+    <script>
+
+        async function submit_entry() {
+            var name = document.getElementById('name').value;
+            var message = document.getElementById('message').value;
+
+            var data = {
+                name,
+                message
+            };
+            try{
+                const res = await fetch('/guestbook/create-entr', {
+                    method: 'POST',
+                    credentials:"include",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                    cache: 'no-cache',
+                })
+                console.log('res:', res)
+                if(res.status === 200) {
+                        alert('Success');
+                        window.location.reload();
+                }else{
+                    alert('Error: ' + res.statusText)
+                }
+            }catch(err){
+                console.log('err:', err)
+            }
+        }        
+
+    </script>
+
+{%endblock%}

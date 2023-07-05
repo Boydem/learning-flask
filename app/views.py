@@ -28,6 +28,18 @@ def sign_up():
     
     return render_template('public/sign_up.html')
 
+@app.route('/guestbook')
+def guestbook():
+    return render_template('public/guestbook.html')
+
+@app.route('/guestbook/create-entry',methods=['POST'])
+def create_entry():
+    body = request.get_json()
+    print(body)
+    res = make_response(jsonify({"message":"Json recived"}),200)
+    return res
+
+
 @app.route('/json',methods=['POST'])
 def json():
     if request.is_json:
