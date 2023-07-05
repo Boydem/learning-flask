@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 from app import app
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, jsonify, make_response
 
 @app.template_filter('clean_date')
 def clean_date(dt):
@@ -27,6 +27,22 @@ def sign_up():
     
     
     return render_template('public/sign_up.html')
+
+@app.route('/json',methods=['POST'])
+def json():
+    if request.is_json:
+        body = request.get_json()
+        response = {
+            "message":"JSON recived!",
+            "sender":body["name"]
+        }
+        res = make_response(jsonify(response))
+        print(type(body))
+        print(body)
+        return res
+    else:
+        res = make_response(jsonify({"message":"No JSON recived"}),400)
+        return res
 
 users = {
     'noam': {
