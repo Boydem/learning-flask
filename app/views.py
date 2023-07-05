@@ -58,6 +58,10 @@ def profile(username):
         user = users[username]
     return render_template('public/profile.html', user=user, username=username)
 
+@app.route('/multi/<foo>/<boo>/<moo>')
+def multiple_vars(foo,boo,moo):
+    return f'foo is {foo}, boo is {boo}, moo is {moo}'
+
 @app.route("/jinja")
 def jinja():
     my_name="Noam"
