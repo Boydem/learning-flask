@@ -9,6 +9,7 @@ def clean_date(dt):
 
 @app.route("/")
 def home():
+
     return render_template('public/index.html')
 
 @app.route("/sign-up",methods=['GET','POST'])
